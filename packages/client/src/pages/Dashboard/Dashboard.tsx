@@ -1,4 +1,5 @@
 import React, { useState, useMemo } from 'react';
+import { useNavigate } from 'react-router-dom';
 // import { useAuth } from "../../auth/AuthContext";
 import './Dashboard.css';
 
@@ -8,8 +9,7 @@ type Item = {
 };
 
 const Dashboard: React.FC = () => {
-  const [isLoggedIn, setIsLoggedIn] = useState(false);
-  const [username, setUsername] = useState('JohnDoe');
+  const navigate = useNavigate();
   const [searchQuery, setSearchQuery] = useState('');
   const [filterCategory, setFilterCategory] = useState('All');
   const [sortOrder, setSortOrder] = useState<'asc' | 'desc'>('asc');
@@ -22,7 +22,7 @@ const Dashboard: React.FC = () => {
   ]);
 
   const handleAuthClick = () => {
-    setIsLoggedIn(!isLoggedIn);
+    navigate('/login');
   };
 
   const handleSortToggle = () => {
@@ -52,13 +52,9 @@ const Dashboard: React.FC = () => {
       <header className="dashboard-header">
         <div className="title">Dashboard</div>
         <div className="auth-section">
-          {isLoggedIn ? (
-            <span className="username">{username}</span>
-          ) : (
-            <button className="auth-button" onClick={handleAuthClick}>
-              Login
-            </button>
-          )}
+          <button className="auth-button" onClick={handleAuthClick}>
+            Login
+          </button>
         </div>
       </header>
 

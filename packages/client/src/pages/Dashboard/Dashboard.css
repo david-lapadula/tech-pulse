@@ -59,3 +59,45 @@ body {
     color: #aaaaaa;
   }
   
+  .controls {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 20px;
+  }
+  
+  .controls input,
+  .controls select,
+  .controls button {
+    background-color: #1f1f1f;
+    border: 1px solid #3a3a3a;
+    color: #e0e0e0;
+    padding: 8px 12px;
+    border-radius: 4px;
+    font-size: 14px;
+  }
+  
+  .controls input:focus,
+  .controls select:focus {
+    outline: none;
+    border-color: #555;
+  }
+  
+  .controls select {
+    cursor: pointer;
+    min-width: 120px;
+  }
+  
+  .controls select option {
+    background-color: #1f1f1f;
+    color: #e0e0e0;
+  }
+  
+  .controls button {
+    cursor: pointer;
+    transition: background-color 0.2s;
+  }
+  
+  .controls button:hover {
+    background-color: #2a2a2a;
+  }
+  
