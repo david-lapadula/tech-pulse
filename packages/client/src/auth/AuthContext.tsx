@@ -16,7 +16,7 @@ const AuthContext = createContext<AuthContextType | undefined>(undefined);
 export const AuthProvider = ({ children }: { children: ReactNode }) => {
   const [user, setUser] = useState<User | null>(null);
   const [users, setUsers] = useState<{ [key: string]: string }>({
-    admin: "password" // Default user for testing
+    admin: "password" 
   });
 
   const login = (username: string, password: string): boolean => {
